@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p,
+h4 {
+  margin: 0;
+}
+
+.Banner {
+  color: white;
+  background-color: #24282b;
+  text-align: center;
+}
+
+.Account {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+.Account div {
+  display: flex;
+  flex: 1;
+}
+
+.Account div p {
+  align-items: center;
+  flex: 1;
+  text-align: right;
+}
+
+.Navigation {
+  width: 60%;
+  margin: auto;
+  display: flex;
+}
+
+.Navigation p,
+div {
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.Body {
+  width: 60%;
+  margin: auto;
+  border: 2px solid #878787;
+  border-top: none;
+  margin-top: 2em;
+}
+
+.main {
+  margin-top: 4em;
+  text-align: center;
+}
+
+.main img {
+  height: 40px;
+}
+
+.main button {
+  background: black;
+  color: white;
+  padding: 1em 2em;
+  margin: 3em 0 3em 0;
+}
