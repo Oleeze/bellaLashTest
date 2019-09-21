@@ -1,3 +1,9 @@
+:root {
+  --main-bg-color: #ebebeb;
+  --main-border-color: #878787;
+  --secondary-bg-color: #24282b;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,15 +13,20 @@ h1,
 p,
 h4 {
   margin: 0;
+}
 
+nav,
+footer {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .banner {
   color: white;
-  background-color: #24282b;
+  background-color: var(--secondary-bg-color);
   text-align: center;
   padding: 0.25em 0;
+  margin-bottom: 0.75em;
+  letter-spacing: 0.0625em;
 }
 
 .account {
@@ -23,7 +34,8 @@ h4 {
   margin: auto;
   display: flex;
   align-items: center;
-  padding-top: 0.75em;
+  margin-bottom: 2em;
+  font-size: smaller;
 }
 
 .account div {
@@ -43,18 +55,11 @@ h4 {
   padding-right: 1em;
 }
 .navigation {
-  width: 60%;
+  width: 52%;
   margin: auto;
   display: flex;
   align-items: center;
-}
-
-.navigation p {
-  align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
-  flex: 1;
-  width: 100%;
+  justify-content: space-between;
 }
 
 .navigation div img {
@@ -63,14 +68,20 @@ h4 {
 }
 
 .body {
-  width: 60%;
+  width: 50%;
   position: relative;
-  margin: 2em auto;
-
+  margin: 3em auto;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   border-top: none;
   border-width: 2px;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #878787, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(
+      to bottom,
+      var(--main-border-color),
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
+  padding: 0.5em 0.75em 2em 0.75em;
 }
 
 .body::after {
@@ -80,57 +91,88 @@ h4 {
   top: 5px;
   left: 5px;
   right: 1px;
-  bottom: 5px;
+  bottom: 0px;
   border-width: 0 0 2px 0;
   border-style: solid;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #878787 50%) 100%
-    1;
+  border-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      var(--main-border-color) 50%
+    )
+    100% 1;
 }
 .main {
   text-align: center;
   padding: 3em 0;
+  background-image: url(./images/mainBack.jpg);
+  background-repeat: no-repeat;
+  background-size: 67%;
+  background-position: center;
+  margin-bottom: 1.5em;
 }
 
 .main img {
   height: 80px;
+  margin-bottom: 1em;
+}
+
+.main p {
+  margin-bottom: 3em;
 }
 
 .main button {
   background: black;
   color: white;
-  padding: 0.5em 1em;
-  margin-top: 3em;
+  padding: 1em 2em;
   font-size: xx-small;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border: none;
+  width: 14%;
+  white-space: nowrap;
 }
 
+.main button:first-of-type {
+  margin-right: 2em;
+}
 .recentlyViewedTitle {
   padding: 0.5em 1em;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) -2%,
+    var(--main-bg-color) 8%,
+    var(--main-bg-color) 89%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  margin-bottom: 1em;
 }
 
 .recentlyViewed {
   display: flex;
-  padding: 1em 0.75em 1.5em 0.75em;
   align-items: stretch;
   height: 50%;
 }
 
 .item {
   position: relative;
-  border-top: 2px solid #878787;
+  border-top: 2px solid var(--main-border-color);
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-right: 0.5em;
   box-sizing: border-box;
-  padding: 1em;
-  border-bottom: 2px solid #878787;
+  padding: 1em 0.5em;
+  border-bottom: 2px solid var(--main-border-color);
 }
 
 .item:before,
 .item:after {
   content: "";
   position: absolute;
-  background-image: linear-gradient(#878787 50%, transparent 100%);
+  background-image: linear-gradient(
+    var(--main-border-color) 50%,
+    transparent 100%
+  );
   top: -2px;
   bottom: -3px;
   width: 2px;
@@ -152,16 +194,31 @@ h4 {
   text-align: center;
   box-sizing: border-box;
   margin: auto;
+  margin-bottom: 1em;
 }
 
 .itemDetails {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  font-size: smaller;
+}
+
+.itemDetails > p {
+  margin-bottom: 1em;
 }
 
 .itemPrice {
   display: flex;
+  padding: 0.25em 1em;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) -2%,
+    var(--main-bg-color) 8%,
+    var(--main-bg-color) 89%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .itemPrice p {
@@ -169,12 +226,17 @@ h4 {
   padding-right: 1em;
 }
 
+.sale {
+  text-decoration: line-through;
+}
+
 footer {
   display: flex;
   padding: 1em;
-  background-color: #24282b;
+  background-color: var(--secondary-bg-color);
   color: white;
   align-items: center;
+  letter-spacing: 0.0625em;
 }
 
 footer p {
