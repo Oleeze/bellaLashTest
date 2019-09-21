@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  max-height: 100%;
 }
 
 h1,
@@ -13,33 +14,41 @@ h4 {
   color: white;
   background-color: #24282b;
   text-align: center;
+  padding: 0.25em 0;
 }
 
 .Account {
   width: 80%;
   margin: auto;
   display: flex;
+  align-items: center;
+  padding: 0.75em;
 }
 
 .Account div {
+  flex: 1;
+}
+
+.Account div:last-of-type {
   display: flex;
-  flex: 1;
+  justify-content: flex-end;
 }
 
-.Account div p {
-  align-items: center;
-  flex: 1;
-  text-align: right;
+.Account div img {
+  height: 40px;
 }
 
+.Account div p:first-of-type {
+  padding-right: 1em;
+}
 .Navigation {
   width: 60%;
   margin: auto;
   display: flex;
+  align-items: center;
 }
 
-.Navigation p,
-div {
+.Navigation p {
   align-items: center;
   overflow: hidden;
   white-space: nowrap;
@@ -48,14 +57,12 @@ div {
 
 .Body {
   width: 60%;
-  margin: auto;
+  margin: 2em auto;
   border: 2px solid #878787;
   border-top: none;
-  margin-top: 2em;
 }
 
 .main {
-  margin-top: 4em;
   text-align: center;
 }
 
@@ -66,6 +73,81 @@ div {
 .main button {
   background: black;
   color: white;
-  padding: 1em 2em;
+  padding: 0.5em 1em;
   margin: 3em 0 3em 0;
+  font-size: xx-small;
+}
+
+.recentlyViewedTitle {
+  padding: 0.5em 1em;
+}
+
+.recentlyViewed {
+  display: flex;
+  padding: 1em 0.75em 1.5em 0.75em;
+  align-items: stretch;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5em;
+  border: 2px solid #878787;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.item:last-of-type {
+  margin-right: 0;
+}
+
+.item img {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.itemPrice {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  padding: 1em;
+  background-color: #24282b;
+  color: white;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+  flex: 1;
+}
+
+.chatWrapper {
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.chatWrapper button {
+  display: flex;
+  align-items: center;
+  background: #c9c9c7;
+  border: 0;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  margin-left: auto;
+}
+
+.chatWrapper button img {
+  height: 20px;
+  margin-right: 0.25em;
 }
