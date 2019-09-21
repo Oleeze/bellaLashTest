@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Oleeze/bellaLashTest/issues"
   },
-  "homepage": "https://github.com/Oleeze/bellaLashTest#readme"
+  "homepage": "https://github.com/Oleeze/bellaLashTest#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
