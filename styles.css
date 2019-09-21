@@ -1,13 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  max-height: 100%;
 }
 
 h1,
 p,
 h4 {
   margin: 0;
+
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .Banner {
@@ -22,7 +23,7 @@ h4 {
   margin: auto;
   display: flex;
   align-items: center;
-  padding: 0.75em;
+  padding-top: 0.75em;
 }
 
 .Account div {
@@ -55,26 +56,49 @@ h4 {
   flex: 1;
 }
 
-.Body {
-  width: 60%;
-  margin: 2em auto;
-  border: 2px solid #878787;
-  border-top: none;
+.Navigation div img {
+  height: 20px;
+  padding-right: 0.5em;
 }
 
+.Body {
+  width: 60%;
+  position: relative;
+  margin: 2em auto;
+
+  border-top: none;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #878787, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.Body::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: 1px;
+  bottom: 5px;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #878787 50%) 100%
+    1;
+}
 .main {
   text-align: center;
+  padding: 3em 0;
 }
 
 .main img {
-  height: 40px;
+  height: 80px;
 }
 
 .main button {
   background: black;
   color: white;
   padding: 0.5em 1em;
-  margin: 3em 0 3em 0;
+  margin-top: 3em;
   font-size: xx-small;
 }
 
@@ -86,16 +110,36 @@ h4 {
   display: flex;
   padding: 1em 0.75em 1.5em 0.75em;
   align-items: stretch;
+  height: 50%;
 }
 
 .item {
+  position: relative;
+  border-top: 2px solid #878787;
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-right: 0.5em;
-  border: 2px solid #878787;
   box-sizing: border-box;
   padding: 1em;
+  border-bottom: 2px solid #878787;
+}
+
+.item:before,
+.item:after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(#878787 50%, transparent 100%);
+  top: -2px;
+  bottom: -3px;
+  width: 2px;
+}
+
+.item:before {
+  left: -2px;
+}
+.item:after {
+  right: -2px;
 }
 
 .item:last-of-type {
@@ -103,13 +147,13 @@ h4 {
 }
 
 .item img {
-  width: 100%;
+  width: 80%;
   text-align: center;
   box-sizing: border-box;
+  margin: auto;
 }
 
 .itemDetails {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -117,6 +161,11 @@ h4 {
 
 .itemPrice {
   display: flex;
+}
+
+.itemPrice p {
+  font-weight: bold;
+  padding-right: 1em;
 }
 
 footer {
